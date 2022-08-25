@@ -31,8 +31,10 @@ const formLabelAlign = reactive({
           <el-input v-model="formLabelAlign.type" />
         </el-form-item>
         <div class="Forget-Registration">
-          <div class="forget-pwd">Forget your password</div>
-          <div class="Registration">Registration</div>
+          <div class="forget-pwd">
+            <a>Forget your password?</a>
+          </div>
+          <div class="Registration"><a>Registration</a></div>
         </div>
         <div>
           <el-button type="primary" @click="submitForm(formRef)"
@@ -69,5 +71,27 @@ const formLabelAlign = reactive({
 }
 .login-page form .submit{
   width: 100%;
+}
+.login-page .Forget-Registration {
+  display: flex;
+}
+.login-page .Forget-Registration  div{
+  flex: 1;
+  color: #3a3a3a;
+  font-size: 9px;
+  padding-bottom: 15px;
+  padding-top: 20px;
+}
+.login-page .Forget-Registration  div a{
+  color: #103573;
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
+.login-page .Forget-Registration  div.forget-pwd {
+  text-align: left;
+}
+.login-page .Forget-Registration  div.Registration {
+  text-align: right;
 }
 </style>
