@@ -3,23 +3,21 @@
   <div class="page-header-nav">
     <header>
       <div class="logo">
-        <a><img src="../assets/web3d-logo.png"/></a>
+        <a><img src="../assets/sipg-logo.png" /></a>
+        
       </div>
       <div>test</div>
     </header>
     <nav>
-      <el-menu
-        :default-active="activeIndex"
-        class="el-menu-demo"
-        mode="horizontal"
-        @select="handleSelect"
-      >
-	  	<el-menu-item index="1">
-          <span>HomePage</span>
+      <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+        <el-menu-item index="1">
+          <span>Home Page</span>
         </el-menu-item>
         <el-sub-menu index="2">
           <template #title>
-            <el-icon><location /></el-icon>
+            <el-icon>
+              <location />
+            </el-icon>
             <span>About us</span>
           </template>
           <el-menu-item-group>
@@ -37,13 +35,13 @@
         <el-menu-item index="4">
           <span>Careers</span>
         </el-menu-item>
-		<el-menu-item index="5">
+        <el-menu-item index="5">
           <span>Cantact Information</span>
         </el-menu-item>
-		<el-menu-item index="6">
+        <el-menu-item index="6">
           <span>English</span>
         </el-menu-item>
-		<el-menu-item index="7">
+        <el-menu-item index="7">
           <span>Login</span>
         </el-menu-item>
       </el-menu>

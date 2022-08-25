@@ -7,22 +7,24 @@
 		display: flex;
 		height: 120px;
 		line-height: 120px;
+
+		align-items: center;
+		justify-content: center;
+		color: #000;
 	}
 	header  > div{
 		height: inherit;
-		align-items: center;
-		justify-content: center;
 		&:first-child {
 			flex: 1;
 			text-align: left;
 			a {
-				width: 100%;
 				height: inherit;
 				display: inline-block;
 			}
 			img {
-				display: block;
-				line-height: 120px;
+				height: 50%;
+				display: inline-block;
+				vertical-align: middle;
 			}
 		}
 		&:last-child {
