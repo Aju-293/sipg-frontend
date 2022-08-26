@@ -51,23 +51,20 @@
                 </el-form-item>
               </el-col>
             </el-row>
-            <div class="Forget-Registration">
-              <div class="forget-pwd">
-                <a>Forget your password?</a>
-              </div>
-              <div class="Registration"><a>Registration</a></div>
+            <div class="Forget-Registration" style="text-align: left;">
+              <el-col :span="24">
+                <el-checkbox v-model="ruleForm.checked">I accept registered user terms.</el-checkbox>
+              </el-col>
             </div>
             <el-row>
               <el-col :span="12">
                 <el-button type="primary" @click="submitForm(ruleFormRef)" class="submit">Submit</el-button>
               </el-col>
               <el-col :span="12">
-                <div ><a class="link-text-style">If your have an account, please login in ></a></div>
+                <div ><a class="link-text-style">If your have an account, please log in ></a></div>
               </el-col>
             </el-row>
           </template>
-
-
         </el-form>
       </div>
     </div>
@@ -84,7 +81,8 @@ const ruleForm = reactive({
   coporateName: "",
   vatId: "",
   mobileNo: "",
-  eMail: ""
+  eMail: "",
+  checked: true
 });
 const checkUserName = (rule, value, callback) => {
   if (!value) {
@@ -127,6 +125,10 @@ const checkMobileNo = (rule, value, callback) => {
 const checkEMail = (rule, value, callback) => {
   if (!value) {
     return callback(new Error('Please input E-Mail'))
+  }
+  let regex = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+  if (!regex.test(value)) {
+    return callback(new Error('邮箱格式不正确'))
   }
   callback && callback();
 };
@@ -209,18 +211,18 @@ const submitForm = (formEl) => {
 
 .login-page .Forget-Registration {
   display: flex;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  color: #103573;
+  font-size: 9px;
 }
 
 .login-page .Forget-Registration div {
   flex: 1;
-  color: #3a3a3a;
-  font-size: 9px;
-  padding-bottom: 15px;
-  padding-top: 20px;
 }
 
 .login-page .Forget-Registration div a {
-  color: #103573;
+  color: inherit;
   display: inline-block;
   width: 100%;
   cursor: pointer;

@@ -133,18 +133,18 @@ const submitForm =(formEl) => {
 
 .login-page .Forget-Registration {
   display: flex;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  color: #103573;
+  font-size: 9px;
 }
 
 .login-page .Forget-Registration div {
   flex: 1;
-  color: #3a3a3a;
-  font-size: 9px;
-  padding-bottom: 15px;
-  padding-top: 20px;
 }
 
 .login-page .Forget-Registration div a {
-  color: #103573;
+  color: inherit;
   display: inline-block;
   width: 100%;
   cursor: pointer;
