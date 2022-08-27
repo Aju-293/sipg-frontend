@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import Header from './layout/Header'
 import Footer from './layout/Footer'
 import App from './App.vue'
-import router from 'router'
+import router from '@/router'
 import ElementPlus from 'element-plus';
 import './style.css'
 import 'element-plus/dist/index.css'

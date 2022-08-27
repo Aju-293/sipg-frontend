@@ -66,8 +66,6 @@
               </el-col>
             </el-row>
           </template>
-
-
         </el-form>
       </div>
     </div>
@@ -86,7 +84,8 @@ const ruleForm = reactive({
   coporateName: "",
   vatId: "",
   mobileNo: "",
-  eMail: ""
+  eMail: "",
+  checked: true
 });
 const checkUserName = (rule, value, callback) => {
   if (!value) {
@@ -129,6 +128,10 @@ const checkMobileNo = (rule, value, callback) => {
 const checkEMail = (rule, value, callback) => {
   if (!value) {
     return callback(new Error('Please input E-Mail'))
+  }
+  let regex = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+  if (!regex.test(value)) {
+    return callback(new Error('邮箱格式不正确'))
   }
   callback && callback();
 };
@@ -213,18 +216,18 @@ const submitForm = (formEl) => {
 
 .login-page .Forget-Registration {
   display: flex;
+  padding-bottom: 15px;
+  padding-top: 10px;
+  color: #103573;
+  font-size: 9px;
 }
 
 .login-page .Forget-Registration div {
   flex: 1;
-  color: #3a3a3a;
-  font-size: 9px;
-  padding-bottom: 15px;
-  padding-top: 20px;
 }
 
 .login-page .Forget-Registration div a {
-  color: #103573;
+  color: inherit;
   display: inline-block;
   width: 100%;
   cursor: pointer;

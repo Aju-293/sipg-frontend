@@ -6,7 +6,7 @@
         <a><img src="../assets/sipg-logo.png" /></a>
         
       </div>
-      <div>test</div>
+      <!-- <div>test</div> -->
     </header>
     <nav>
       <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
@@ -56,5 +56,9 @@ const handleSelect = (key, keyPath) => {
 }
 </script>
 <style lang="less" scoped>
+
 @import url("../styles/header.less");
+:deep(.el-menu--horizontal) {
+  border: none
+}
 </style>
