@@ -55,14 +55,14 @@
               <div class="forget-pwd">
                 <a>Forget your password?</a>
               </div>
-              <div class="Registration"><a>Registration</a></div>
+              <div class="Registration"><a :class="classes.light">Registration</a></div>
             </div>
             <el-row>
               <el-col :span="12">
                 <el-button type="primary" @click="submitForm(ruleFormRef)" class="submit">Submit</el-button>
               </el-col>
               <el-col :span="12">
-                <div ><a class="link-text-style">If your have an account, please login in ></a></div>
+                <div><a class="link-text-style">If your have an account, please login in ></a></div>
               </el-col>
             </el-row>
           </template>
@@ -76,6 +76,8 @@
 <script setup>
 import { reactive, ref } from "vue";
 import { Calendar, Search } from "@element-plus/icons-vue";
+import classes from 'styles/common.module.less';
+console.log(classes, 'styles')
 const ruleFormRef = ref()
 const show = ref(1)
 const ruleForm = reactive({
@@ -108,7 +110,7 @@ const checkVatId = (rule, value, callback) => {
   if (!value) {
     return callback(new Error('Please input Vat ID'))
   }
-  let regex =/^[0-9]*$/;
+  let regex = /^[0-9]*$/;
   if (value.length < 9 || !regex.test(value)) {
     return callback(new Error('不少于 9 位数字'))
   }
@@ -117,8 +119,8 @@ const checkVatId = (rule, value, callback) => {
 const checkMobileNo = (rule, value, callback) => {
   if (!value) {
     return callback(new Error('Please input MobileNo'))
-  } 
-  let regex =/^[0-9]*$/; 
+  }
+  let regex = /^[0-9]*$/;
   if (value.length < 6 || !regex.test(value)) {
     return callback(new Error('不少于 6 位数字'))
   }
@@ -165,22 +167,24 @@ const submitForm = (formEl) => {
 </script>
 
 
-<style scoped>
+<style scoped lang="less">
 .login-page {
   margin: 0 auto;
+
+  .empty {
+    padding: 15px;
+  }
+
+  .login-form-box {
+    margin: 0 auto 50px;
+    width: 1305px;
+    background: url("../assets/regester.jpeg") no-repeat;
+    text-align: right;
+    background-size: 100%;
+  }
 }
 
-.login-page .empty {
-  padding: 15px;
-}
 
-.login-page .login-form-box {
-  margin: 0 auto 50px;
-  width: 1305px;
-  background: url("../assets/regester.jpeg") no-repeat;
-  text-align: right;
-  background-size: 100%;
-}
 
 .login-page .form-content {
   margin: 100px 20px;
@@ -233,6 +237,7 @@ const submitForm = (formEl) => {
 .login-page .Forget-Registration div.Registration {
   text-align: right;
 }
+
 .link-text-style {
   color: #103573;
   cursor: pointer;
