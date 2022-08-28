@@ -10,11 +10,11 @@ const resolvePath = function (str) {
 export default defineConfig(({command, mode}) => {
   console.log(command, 'commod')
   let options = {};
-  if (command == 'build') {
-    options.publicDir ='https://aju-293.github.io/sipg-frontend/';
-  } else {
-    options.publicDir ='/';
-  }
+  // if (command == 'build') {
+  //   options.publicDir ='/';
+  // } else {
+  //   options.publicDir ='/';
+  // }
   return {
     ...options,
     plugins: [
