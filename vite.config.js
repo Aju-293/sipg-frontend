@@ -10,11 +10,11 @@ const resolvePath = function (str) {
 export default defineConfig(({command, mode}) => {
   console.log(command, 'commod')
   let options = {};
-  // if (command == 'build') {
-  //   options.publicDir ='/';
-  // } else {
-  //   options.publicDir ='/';
-  // }
+  if (command == 'build') {
+    options.base ='./';
+  } else {
+    // options.publicDir ='/';
+  }
   return {
     ...options,
     plugins: [
