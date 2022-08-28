@@ -13,12 +13,9 @@ export default defineConfig(({command, mode}) => {
     
   };
   if (command == 'build') {
-    options.build = {
-      outDir: './dist'
-    }
-    console.log(options, 'options')
+    options.base = 'https://aju-293.github.io/sipg-frontend/dist/';
   } else {
-    // options.publicDir ='/';
+    options.base ='./';
   }
   return {
     ...options,
