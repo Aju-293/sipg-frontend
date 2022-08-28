@@ -11,7 +11,7 @@ export default defineConfig(({command, mode}) => {
   console.log(command, 'commod')
   let options = {};
   if (command == 'build') {
-    options.publicDir ='https://github.com/Aju-293/sipg-frontend/';
+    options.publicDir ='https://aju-293.github.io/sipg-frontend/';
   } else {
     options.publicDir ='/';
   }
