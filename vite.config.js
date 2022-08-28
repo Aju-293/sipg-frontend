@@ -8,17 +8,14 @@ const resolvePath = function (str) {
   return path.resolve(__dirname, pathStr);
 }
 export default defineConfig(({command, mode}) => {
-  console.log(command, 'commod')
-  let options = {
-    
-  };
+  let options = {};
   if (command == 'build') {
-    options.base = 'https://aju-293.github.io/sipg-frontend/';
-    options.build= {
-      outDir: './'
-    };
+    options.base ='https://aju-293.github.io/sipg-frontend/dist';
+    // options.build = {
+    //   // outDir: '/dist'
+    // }
   } else {
-    options.base ='./';
+    // options.publicDir ='/';
   }
   return {
     ...options,
