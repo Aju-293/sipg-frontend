@@ -1,21 +1,24 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
-import pluginLegacy from "@vitejs/plugin-legacy"
 
 // https://vitejs.dev/config/
 const resolvePath = function (str) {
   let pathStr = str ? ('src/' + str) : 'src'
   return path.resolve(__dirname, pathStr);
 }
-export default defineConfig((command, mode) => {
-  console.log('command, mode', command, mode);
+export default defineConfig(({command, mode}) => {
+  console.log(command, 'commod')
+  let options = {};
+  if (command == 'build') {
+    options.publicDir ='https://github.com/Aju-293/sipg-frontend/';
+  } else {
+    options.publicDir ='/';
+  }
   return {
+    ...options,
     plugins: [
-      vue(),
-      pluginLegacy({
-        targets: ['defaults', 'not ie 11']
-      })
+      vue()
     ],
     resolve: {
       alias: {
@@ -40,5 +43,4 @@ export default defineConfig((command, mode) => {
       },
     }
   }
-
 })
