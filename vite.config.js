@@ -9,9 +9,11 @@ const resolvePath = function (str) {
 }
 export default defineConfig(({command, mode}) => {
   console.log(command, 'commod')
-  let options = {};
+  let options = {
+    base: './dist'
+  };
   if (command == 'build') {
-    options.base ='./';
+    //options.base ='./'
   } else {
     // options.publicDir ='/';
   }
