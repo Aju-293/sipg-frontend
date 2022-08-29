@@ -15,7 +15,7 @@ export default defineConfig(({command, mode}) => {
     //   // outDir: '/dist'
     // }
   } else {
-    // options.publicDir ='/';
+    options.base ='./';
   }
   return {
     ...options,
