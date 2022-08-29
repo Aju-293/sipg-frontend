@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
-        "isolatedModules": true
+        "target": "es5", 
+        "isolatedModules": true,
+        "noEmit": true, 
     }
 }

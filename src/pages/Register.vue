@@ -71,11 +71,9 @@
     </div>
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
 import { reactive, ref } from "vue";
-import { Calendar, Search } from "@element-plus/icons-vue";
-import classes from 'styles/common.module.less';
-console.log(classes, 'styles')
+import classes  from 'styles/common.module.less';
 const ruleFormRef = ref()
 const show = ref(1)
 const ruleForm = reactive({

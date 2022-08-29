@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
@@ -8,6 +8,8 @@ const resolvePath = function (str) {
   return path.resolve(__dirname, pathStr);
 }
 export default defineConfig(({command, mode}) => {
+  console.log(loadEnv(mode, process.cwd()), mode, 'mode')
+  
   let options = {};
   if (command == 'build') {
     options.base ='https://aju-293.github.io/sipg-frontend/dist';
