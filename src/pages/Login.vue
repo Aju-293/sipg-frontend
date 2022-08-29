@@ -91,22 +91,18 @@ const submitForm =(formEl) => {
 </script>
 
 
-<style scoped>
-.login-page {
-  margin: 0 auto;
-}
+<style scoped lang="stylus">
+.login-page 
+  margin: 0 auto
+  .empty
+    padding: 15px
+  .login-form-box 
+    margin: 0 auto 50px;
+    width: 1305px;
+    background: url("../assets/login.jpeg") no-repeat;
+    text-align: right;
+    background-size: 100%;
 
-.login-page .empty {
-  padding: 15px;
-}
-
-.login-page .login-form-box {
-  margin: 0 auto 50px;
-  width: 1305px;
-  background: url("../assets/login.jpeg") no-repeat;
-  text-align: right;
-  background-size: 100%;
-}
 
 .login-page .form-content {
   margin: 100px 20px;
